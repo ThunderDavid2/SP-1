@@ -5,7 +5,7 @@ public class PlayMovement : MonoBehaviour
     public float runSpeed = 2;
     public float jumpSpeed = 3;
     public float doubleJumpSpeed = 2.5f;
-    //Hallo
+    //Hallo hej
     private bool canDoubleJump;
 
     Rigidbody2D rd2D;
