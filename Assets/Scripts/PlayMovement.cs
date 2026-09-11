@@ -5,13 +5,13 @@ public class PlayMovement : MonoBehaviour
     public float runSpeed = 2;
     public float jumpSpeed = 3;
     public float doubleJumpSpeed = 2.5f;
-
+    //Hallo
     private bool canDoubleJump;
 
     Rigidbody2D rd2D;
 
     private bool betterJump = false;
-   
+
     public float fallMultipiler = 0.5f;
     public float lowJumpMultiplier = 1f;
 
@@ -39,7 +39,7 @@ public class PlayMovement : MonoBehaviour
                 {
                     animator.SetBool("DoubleJump", true);
                     rd2D.velocity = new Vector2(rd2D.velocity.x, jumpSpeed);
-                    canDoubleJump = false; 
+                    canDoubleJump = false;
                 }
             }
         }
@@ -60,7 +60,7 @@ public class PlayMovement : MonoBehaviour
         {
             animator.SetBool("Falling", true);
         }
-        else if(rd2D.velocity.y > 0)
+        else if (rd2D.velocity.y > 0)
         {
             animator.SetBool("Falling", false);
         }
@@ -68,7 +68,7 @@ public class PlayMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Input.GetKey("d") || Input.GetKey("right"))
+        if (Input.GetKey("d") || Input.GetKey("right"))
         {
             rd2D.velocity = new Vector2(runSpeed, rd2D.velocity.y);
             spriteRenderer.flipX = false;
@@ -85,7 +85,7 @@ public class PlayMovement : MonoBehaviour
             rd2D.velocity = new Vector2(0, rd2D.velocity.y);
             animator.SetBool("Run", false);
         }
-   
+
         if (betterJump)
         {
             if (rd2D.velocity.y < 0)
